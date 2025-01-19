@@ -3,67 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TodoMates - Página Principal</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TodoMates - Portal Educativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 1rem;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        .dropbtn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Barra de navegación -->
     <header>
-        <nav>
-            <div class="logo">
-                <h1>TodoMates</h1>
-            </div>
-            <ul class="menu">
-                <li><a href="#">Inicio</a></li>
-                <li class="submenu">
-                    <a href="#">Primer Ciclo</a>
-                    <ul class="submenu-items">
-                        <li><a href="#">1er Grado</a></li>
-                        <li><a href="#">2do Grado</a></li>
-                        <li><a href="#">3er Grado</a></li>
-                    </ul>
-                </li>
-                <li class="submenu">
-
-                    <a href="#">Segundo Ciclo</a>
-                    <ul class="submenu-items">
-                        <li><a href="#">4to Grado</a></li>
-                        <li><a href="#">5to Grado</a></li>
-                        <li><a href="#">6to Grado</a></li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <a href="#">Tercer Ciclo</a>
-                    <ul class="submenu-items">
-                        <li><a href="#">7mo Grado</a></li>
-                        <li><a href="#">8vo Grado</a></li>
-                        <li><a href="#">9no Grado</a></li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <a href="#">Bachillerato</a>
-                    <ul class="submenu-items">
-                        <li><a href="#">1er Año Bachillerato</a></li>
-                        <li><a href="#">2do Año Bachillerato</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <h1>TodoMates</h1>
+        <p>Tu portal educativo de matemáticas</p>
     </header>
 
-    <!-- Contenido principal -->
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Primer Ciclo</button>
+            <div class="dropdown-content">
+                <a href="#">Primer Grado</a>
+                <a href="#">Segundo Grado</a>
+                <a href="#">Tercer Grado</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Segundo Ciclo</button>
+            <div class="dropdown-content">
+                <a href="#">Cuarto Grado</a>
+                <a href="#">Quinto Grado</a>
+                <a href="#">Sexto Grado</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Tercer Ciclo</button>
+            <div class="dropdown-content">
+                <a href="#">Séptimo Grado</a>
+                <a href="#">Octavo Grado</a>
+                <a href="#">Noveno Grado</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Bachillerato</button>
+            <div class="dropdown-content">
+                <a href="#">Primer Año</a>
+                <a href="#">Segundo Año</a>
+            </div>
+        </div>
+    </nav>
+
     <main>
-        <section class="intro">
+        <section class="welcome-section">
             <h2>Bienvenidos a TodoMates</h2>
-            <p>En TodoMates encontrarás recursos, actividades y materiales para estudiantes de primaria, secundaria y bachillerato.</p>
+            <p>Tu recurso completo para el aprendizaje de matemáticas en todos los niveles educativos</p>
         </section>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Ejercicios Prácticos</h3>
+                <p>Encuentra ejercicios adaptados a cada nivel educativo para practicar y mejorar tus habilidades matemáticas.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Video Tutoriales</h3>
+                <p>Aprende con nuestros videos explicativos que te ayudarán a comprender mejor los conceptos matemáticos.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Material Descargable</h3>
+                <p>Accede a guías de estudio, ejercicios y material complementario para reforzar tu aprendizaje.</p>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 TodoMates. Todos los derechos reservados.</p>
+        <p>© 2025 TodoMates - Todos los derechos reservados</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
