@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con Monomios y Binomios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #29649e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #4d94db;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #29649e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1e4a7a;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Operaciones con Monomios y Binomios</h1>
+        
+        <h2>Monomio por Binomio</h2>
+        <input type="text" id="monomio1" placeholder="Monomio (ej. 3x)">
+        <input type="text" id="binomio1" placeholder="Binomio (ej. 2x + 5)">
+        <button onclick="calcularMonomioPorBinomio()">Calcular</button>
+        <div class="result" id="result1"></div>
+
+        <h2>Binomio por Monomio</h2>
+        <input type="text" id="binomio2" placeholder="Binomio (ej. 2x + 5)">
+        <input type="text" id="monomio2" placeholder="Monomio (ej. 3x)">
+        <button onclick="calcularBinomioPorMonomio()">Calcular</button>
+        <div class="result" id="result2"></div>
+    </div>
+
+    <script>
+        function calcularMonomioPorBinomio() {
+            const monomio = document.getElementById('monomio1').value;
+            const binomio = document.getElementById('binomio1').value;
+
+            const [a, b] = binomio.split('+').map(term => term.trim());
+            const result = `${monomio} * ${a} + ${monomio} * ${b}`;
+            document.getElementById('result1').innerText = `Resultado: ${result}`;
+        }
+
+        function calcularBinomioPorMonomio() {
+            const binomio = document.getElementById('binomio2').value;
+            const monomio = document.getElementById('monomio2').value;
+
+            const [a, b] = binomio.split('+').map(term => term.trim());
+            const result = `${a} * ${monomio} + ${b} * ${monomio}`;
+            document.getElementById('result2').innerText = `Resultado: ${result}`;
+        }
+    </script>
+</body>
+</html>
